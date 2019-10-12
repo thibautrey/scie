@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, withStyles } from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = withStyles({
+  Test: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridColumnGap: '20px',
+    width: '100%',
+    padding: 20
+  },
+  ButtonsContainer: {},
+  buttons: {
+    margin: 10
+  }
+})(({ classes }) => (
+  <div className={classes.Test}>
+    <div className={classes.ButtonsContainer}>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        100mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        200mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        300mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        400mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        500mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        600mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        700mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        800mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        900mm
+      </Button>
+      <Button className={classes.buttons} variant="contained" color="primary">
+        1000mm
+      </Button>
     </div>
-  );
-}
+
+    <div>Status du chariot</div>
+  </div>
+));
 
 export default App;

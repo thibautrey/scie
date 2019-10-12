@@ -1,19 +1,38 @@
 import React from 'react';
+import { compose, lifecycle } from 'recompose';
 import { Button, withStyles } from '@material-ui/core';
 
-const App = withStyles({
-  Test: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridColumnGap: '20px',
-    width: '100%',
-    padding: 20
-  },
-  ButtonsContainer: {},
-  buttons: {
-    margin: 10
-  }
-})(({ classes }) => (
+const App = compose(
+  withStyles({
+    Test: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridColumnGap: '20px',
+      width: '100%',
+      padding: 20
+    },
+    ButtonsContainer: {},
+    buttons: {
+      margin: 10
+    }
+  }),
+  lifecycle({
+    componentDidMount: () => {
+      //var socket = io.connect('http://localhost:3000');
+      /*socket.on('message', function(message) {
+        $('#logs').html(message);
+      });
+
+      $('#input').change(e => {
+        valueInput = e.target.value;
+      });
+
+      $('#envoyer').click(e => {
+        socket.emit('message', valueInput);
+      });*/
+    }
+  })
+)(({ classes }) => (
   <div className={classes.Test}>
     <div className={classes.ButtonsContainer}>
       <Button className={classes.buttons} variant="contained" color="primary">
